@@ -14,5 +14,4 @@ def contar_caracteres(s):
     
 if __name__ == "__main__":
     print(contar_caracteres(palavra))
-    print()
     #print(contar_caracteres('banana'))

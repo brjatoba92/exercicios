@@ -3,7 +3,8 @@ PROGRAMA CAIXA BANCO
 
 - INFORMAR O VALOR A SER SACADO
 -  OPÇÃO DAS NOTAS
-- DISTRIBUI AS CEDULAS DISPONIVEIS CONFORME A OPÇÃO ESCOLHIDA 
+- DISTRIBUI AS CEDULAS DISPONIVEIS CONFORME A OPÇÃO ESCOLHIDA
+- RESTO FOR ENTRE 1 E 4 E DE 6 A 9 # NEGAR SOMENTE FOR MULTIPLO DE 5
 """
 saque = int (input ('Digite o valor:'))
 
@@ -28,16 +29,16 @@ def pagina_secundaria():
         print ('3. Notas de 10')
         print ('4. Notas de 5')
         print ('5. Notas de 1')
-        print ('6. Notas de 100, 50, 10, 5 e 1')
-        print ('7. Notas de 100, 50, 10, 5')
-        print ('8. Notas de 100, 50, 10, 1')
-        print ('9. Notas de 100, 50, 10')
-        print ('10. Notas de 100, 50, 5')
-        print ('11. Notas de 100, 50, 1')
-        print ('12. Notas de 100 e 50')
-        print ('13. Notas de 100 e 10')
-        print ('14. Notas de 100 e 5')
-        print ('15. Notas de 100 e 1')
+        #print ('6. Notas de 100, 50, 10, 5 e 1')
+        #print ('7. Notas de 100, 50, 10, 5')
+        #print ('8. Notas de 100, 50, 10, 1')
+        #print ('9. Notas de 100, 50, 10')
+        #print ('10. Notas de 100, 50, 5')
+        #print ('11. Notas de 100, 50, 1')
+        #print ('12. Notas de 100 e 50')
+        #print ('13. Notas de 100 e 10')
+        #print ('14. Notas de 100 e 5')
+        #print ('15. Notas de 100 e 1')
         print ('16. Notas de 50 e 10')
         print ('17. Notas de 50 e 5')
         print ('18. Notas de 50 e 1')
@@ -56,7 +57,7 @@ def pagina_secundaria():
          print ('16. Notas de 10 e 5')
          print ('17. Notas de 5 e 1')
     
-    elif 100 < saque < 150 and (saque % cedulas[0]) > 0: #ENTRE 100 E 150 E O VALOR DO RESTO FOR MAIOR QUE 0 ==> 110 = SOBRA 10, 120 = SOBRA 20
+    elif 100 < saque < 150 and 10 <= (saque % cedulas[0]) < 50: #ENTRE 100 E 150 E O VALOR DO RESTO FOR MAIOR QUE 0 ==> 110 = SOBRA 10, 120 = SOBRA 20
         print ('13. Notas de 100 e 10')
         print ('14. Notas de 100 e 10')
         print ('15. Notas de 100 e 1')
@@ -66,7 +67,7 @@ def pagina_secundaria():
         print ('19. Notas de 10 e 5')
         print ('20. Notas de 5 e 1')
     
-    elif 200 < saque <= 250 and (saque % cedulas[0]) > 0: #ok
+    elif 200 < saque <= 250 and 10 <= (saque % cedulas[0]) < 50: #ok
         print ('13. Notas de 100 e 10')
         print ('14. Notas de 100 e 5')
         print ('15. Notas de 100 e 1')
@@ -76,7 +77,7 @@ def pagina_secundaria():
         print ('19. Notas de 10 e 5')
         print ('20. Notas de 5 e 1')
 
-    elif 300 < saque <= 350 and (saque % cedulas[0]) > 0: #ok
+    elif 300 < saque <= 350 and 10 <= (saque % cedulas[0]) < 50: #ok
         print ('13. Notas de 100 e 10')
         print ('14. Notas de 100 e 5')
         print ('15. Notas de 100 e 1')
@@ -86,7 +87,7 @@ def pagina_secundaria():
         print ('19. Notas de 10 e 5')
         print ('20. Notas de 5 e 1')
 
-    elif 400 < saque <= 450 and (saque % cedulas[0]) > 0: #ok
+    elif 400 < saque <= 450 and 10 <= (saque % cedulas[0]) < 50: #ok
         print ('13. Notas de 100 e 10')
         print ('14. Notas de 100 e 5')
         print ('15. Notas de 100 e 1')
@@ -96,7 +97,7 @@ def pagina_secundaria():
         print ('19. Notas de 10 e 5')
         print ('20. Notas de 5 e 1')
 
-    elif 500 < saque <= 550 and (saque % cedulas[0]) > 0: #ok
+    elif 500 < saque <= 550 and 10 <= (saque % cedulas[0]) < 50: #ok
         print ('13. Notas de 100 e 10')
         print ('14. Notas de 100 e 5')
         print ('15. Notas de 100 e 1')
@@ -105,7 +106,8 @@ def pagina_secundaria():
         print ('18. Notas de 50 e 1')
         print ('19. Notas de 10 e 5')
         print ('20. Notas de 5 e 1')
-    else:
+    
+    elif (saque % cedulas[0]) > 50:
         print ('6. Notas de 100, 50, 10, 5 e 1')
         print ('7. Notas de 100, 50, 10, 5')
         print ('8. Notas de 100, 50, 10, 1')
@@ -174,7 +176,7 @@ def opcao_6(): #ok
     soma = x_100 + x_50 + x_10 + x_5 + x_1
     print(soma)
 
-def opcao_7(): #ok
+def opcao_7():
     quantidade_notas = divmod(saque, cedulas[0]) # 1 nota de 100
     x_100 = quantidade_notas[0] #1 nota de 100
     y_100 = quantidade_notas[1] #sobrou
@@ -198,7 +200,7 @@ def opcao_7(): #ok
     soma = x_100 + x_50 + x_10 + x_5
     print(soma)
 
-def opcao_8(): #ok
+def opcao_8():
     quantidade_notas = divmod(saque, cedulas[0]) # 1 nota de 100
     x_100 = quantidade_notas[0] #1 nota de 100
     y_100 = quantidade_notas[1] #sobrou
@@ -222,7 +224,7 @@ def opcao_8(): #ok
     soma = x_100 + x_50 + x_10 + x_1
     print(soma)
 
-def opcao_9(): #ok
+def opcao_9():
     quantidade_notas = divmod(saque, cedulas[0]) # 1 nota de 100
     x_100 = quantidade_notas[0] #1 nota de 100
     y_100 = quantidade_notas[1] #sobrou
@@ -241,7 +243,7 @@ def opcao_9(): #ok
     soma = x_100 + x_50 + x_10
     print(soma)
 
-def opcao_10(): #ok
+def opcao_10(): 
     quantidade_notas = divmod(saque, cedulas[0]) # 1 nota de 100
     x_100 = quantidade_notas[0] #1 nota de 100
     y_100 = quantidade_notas[1] #sobrou
@@ -260,7 +262,7 @@ def opcao_10(): #ok
     soma = x_100 + x_50 + x_5
     print(soma)
 
-def opcao_11(): #ok
+def opcao_11():
     quantidade_notas = divmod(saque, cedulas[0]) # 1 nota de 100
     x_100 = quantidade_notas[0] #1 nota de 100
     y_100 = quantidade_notas[1] #sobrou
@@ -279,7 +281,7 @@ def opcao_11(): #ok
     soma = x_100 + x_50 + x_1
     print(soma)
 
-def opcao_12(): #ok
+def opcao_12(): 
     quantidade_notas = divmod(saque, cedulas[0]) # 1 nota de 100
     x_100 = quantidade_notas[0] #1 nota de 100
     y_100 = quantidade_notas[1] #sobrou
@@ -293,7 +295,7 @@ def opcao_12(): #ok
     soma = x_100 + x_50
     print(soma)
 
-def opcao_13(): #ok
+def opcao_13(): 
     quantidade_notas = divmod(saque, cedulas[0]) # 1 nota de 100
     x_100 = quantidade_notas[0] #1 nota de 100
     y_100 = quantidade_notas[1] #sobrou
@@ -307,7 +309,7 @@ def opcao_13(): #ok
     soma = x_100 + x_10
     print(soma)
 
-def opcao_14(): #ok
+def opcao_14(): 
     quantidade_notas = divmod(saque, cedulas[0]) # 1 nota de 100
     x_100 = quantidade_notas[0] #1 nota de 100
     y_100 = quantidade_notas[1] #sobrou
@@ -321,7 +323,7 @@ def opcao_14(): #ok
     soma = x_100 + x_5
     print(soma)
 
-def opcao_15(): #ok
+def opcao_15(): 
     quantidade_notas = divmod(saque, cedulas[0]) # 1 nota de 100
     x_100 = quantidade_notas[0] #1 nota de 100
     y_100 = quantidade_notas[1] #sobrou
@@ -335,8 +337,8 @@ def opcao_15(): #ok
     soma = x_100 + x_1
     print(soma)
 
-def opcao_16(): #ok
-    notas_a = divmod(y_100, cedulas[1])
+def opcao_16(): 
+    notas_a = divmod(saque, cedulas[1])
     x_50 = notas_a[0] #1 nota de 50
     y_50 = notas_a[1] #sobrou
     print(x_50,y_50)
@@ -349,7 +351,7 @@ def opcao_16(): #ok
     soma = x_50 + x_10
     print(soma)
 
-def opcao_17(): #ok 100(0), 50 (1), 10(2), 5(3), 1(4) 
+def opcao_17():
     notas_a = divmod(saque, cedulas[1])
     x_50 = notas_a[0] #1 nota de 50
     y_50 = notas_a[1] #sobrou
@@ -363,7 +365,7 @@ def opcao_17(): #ok 100(0), 50 (1), 10(2), 5(3), 1(4)
     soma = x_50 + x_5
     print(soma)
 
-def opcao_18(): #ok 100(0), 50 (1), 10(2), 5(3), 1(4) 
+def opcao_18():
     notas_a = divmod(saque, cedulas[1])
     x_50 = notas_a[0] #1 nota de 50
     y_50 = notas_a[1] #sobrou
@@ -377,7 +379,7 @@ def opcao_18(): #ok 100(0), 50 (1), 10(2), 5(3), 1(4)
     soma = x_50 + x_1
     print(soma)
 
-def opcao_19(): #ok 100(0), 50 (1), 10(2), 5(3), 1(4) 
+def opcao_19():
     notas_a = divmod(saque, cedulas[2])
     x_10 = notas_a[0] #1 nota de 50
     y_10 = notas_a[1] #sobrou
@@ -391,7 +393,7 @@ def opcao_19(): #ok 100(0), 50 (1), 10(2), 5(3), 1(4)
     soma = x_10 + x_5
     print(soma)
 
-def opcao_20(): #notas de 10 e 1
+def opcao_20(): 
     notas_a = divmod(saque, cedulas[2])
     x_10 = notas_a[0] #1 nota de 50
     y_10 = notas_a[1] #sobrou
@@ -405,7 +407,7 @@ def opcao_20(): #notas de 10 e 1
     soma = x_10 + x_1
     print(soma)
 
-def opcao_21(): #notas de 5 e 1
+def opcao_21(): 
     notas_a = divmod(saque, cedulas[3])
     x_5 = notas_a[0] #1 nota de 50
     y_5 = notas_a[1] #sobrou
