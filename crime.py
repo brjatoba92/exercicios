@@ -29,7 +29,7 @@ def respostas():
     resposta_investigado5 = int(input ('Informe 1/Sim ou 0/Não:'))
 
     soma_resposta = resposta_investigado1 + resposta_investigado2 + resposta_investigado3 + resposta_investigado4 + resposta_investigado5
-
+    
     if soma_resposta == 5:
         print('Acusado')
     elif 3 <= soma_resposta < 5:
@@ -39,12 +39,7 @@ def respostas():
     else:
         print('Inocente')
         
-"""
-implementar as categorias
-2 questões positivas = suspeito
-3 e 4 positivas = cumplice
-5 = assassino
-"""
+
     
 if __name__ == "__main__":
     respostas()
