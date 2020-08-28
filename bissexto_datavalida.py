@@ -38,9 +38,16 @@ def data():
         if dia <= 31:
             valida = True
 
-    elif mes == 2:
-        if dia <= 28 or dia <= 29:
+    if ano % 4 == 0:
+        if ano % 100:
+            if ano % 400 and dia == 29:
+                valida = True
+            else:
+                valida - False
+        else:
             valida = True
+    else:
+        valida = False
 
 
     if (valida):
