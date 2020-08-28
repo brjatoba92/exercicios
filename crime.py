@@ -32,7 +32,7 @@ def respostas():
 
     if soma_resposta == 5:
         print('Acusado')
-    elif soma_resposta < 5 and soma_resposta >= 3:
+    elif 3 <= soma_resposta < 5:
         print('Cumplice')
     elif soma_resposta == 2:
         print('Suspeito')
