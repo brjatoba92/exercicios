@@ -58,5 +58,4 @@ while i <= quantidade_parcelas:
         print("Divida:",divida_final)
         parcela = divida_final / (i-1)
         print("Valor de cada parcela:", parcela)
-    
-     #implementar os valores das parcelas mediante   
+  
